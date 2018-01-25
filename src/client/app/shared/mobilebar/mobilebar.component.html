@@ -1,0 +1,10 @@
+<sm-sidebar class="vertical menu" #invertedSidebar>
+  <a sm-item [routerLink]="['/']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">League of Data</a>
+  <a sm-item [routerLink]="['/champion']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">Champions</a>
+  <a sm-item [routerLink]="['/summoner']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">Summoners</a>
+</sm-sidebar>
+<!-- Mobile Header -->
+<sm-menu class="fixed mobile">
+  <sm-item (click)="invertedSidebar.show()" icon="list"></sm-item>
+  <sm-item [header]="pageTitle"></sm-item>
+</sm-menu>

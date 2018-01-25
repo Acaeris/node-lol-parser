@@ -1,0 +1,64 @@
+<section class="summoner">
+  <div class="ui container">
+    <h2 i18n>Summoner Details</h2>
+
+    <sm-card class="fluid profile" *ngIf="summoner">
+
+      <ng-container ngProjectAs="card-title">
+        <i class="right floated star icon"></i>
+        <lod-summoner-icon class="left floated" [summoner]="summoner">
+        </lod-summoner-icon>
+        <h2 class="header">{{summoner.name}}</h2>
+      </ng-container>
+
+      <ng-container ngProjectAs="card-subtitle">
+        <p class="region">{{region}}</p>
+        <p class="rank">Ladder Rank: </p>
+        <div class="ui labels description">
+          <span class="ui label">Ranks</span>
+        </div>
+        <p class="right floated date">Last Updated: 8 months ago</p>
+      </ng-container>
+
+      <sm-buttons class="bottom attached">
+        <a sm-button class="primary" icon="refresh">Renew</a>
+        <a sm-button icon="play" disabled="true">Game</a>
+      </sm-buttons>
+    </sm-card>
+
+    <sm-menu class="top attached tabular small">
+      <a class="active item">Summary</a>
+      <a class="item">Champions</a>
+      <a class="item">Leagues</a>
+      <a class="ui desktop item">Matches</a>
+      <a class="ui desktop item">Runes</a>
+      <a class="ui desktop item">Masteries</a>
+      <ng-container ngProjectAs="menu-right">
+        <div dropdown class="ui mobile dropdown item">
+          <i class="horizontal ellipsis icon"></i>
+          <div class="menu">
+            <a class="item">Matches</a>
+            <a class="item">Runes</a>
+            <a class="item">Masteries</a>
+          </div>
+        </div>
+      </ng-container>
+    </sm-menu>
+    <div class="ui bottom attached segment">
+      <div class="ui stackable grid">
+        <div class="twelve wide column">
+          <div class="ui top attached header segment">Performance Chart</div>
+          <div class="ui top attached header segment">Match History</div>
+        </div>
+        <div class="four wide center aligned column">
+          <sm-statistic [stat]="{'label': 'Current Rank', 'value':'Bronze'}" class="mini"></sm-statistic>
+          <div class="ui top attached header segment">Overall Statistics</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <ul>
+    <li *ngFor="let name of names">{{ name }}</li>
+  </ul>
+</section>

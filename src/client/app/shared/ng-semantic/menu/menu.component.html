@@ -1,0 +1,10 @@
+<a href="#/" *ngIf="logo" class="header item" #innerElement>
+  <img class="{{logoClass}}" alt="{{title}}" src="{{logo}}">
+</a>
+<a href="#/" *ngIf="title && !logo" class="header item">
+  {{title}}
+</a>
+<ng-content></ng-content>
+<div class="right menu">
+  <ng-content select="menu-right"></ng-content>
+</div>
